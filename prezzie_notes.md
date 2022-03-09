@@ -141,8 +141,10 @@ These come with your shell.
 # Examples
 
 ### Austin's Examples
+#### Examples belonging to Austin
 
 ### Jesse's Examples
+#### Examples belonging to Jesse
 
 <!-- # Examples -->
 
