@@ -29,13 +29,15 @@
 ### Your terminal is your friend.
 
 <!-- JA -->
-### How you flow through your work.
+### Workflows
+#### How using the terminal can make your development smoother
 
 <!-- AJ -->
 ### Small Composable Tools
 
 <!-- JA -->
 ### Shell is a language
+#### It seems like 'the thing you do in the terminal', but it is more than that
 
 <!-- # Concepts -->
 
@@ -53,10 +55,10 @@
 <!-- JA -->
 ## How you flow through your work.
 
-- I can't willingly do something my computer can do better.
+- Don't spend a lot of time doing something that your computer can do better
 - Homogeneous workflows increase productivity.
-  - Ex PRs
   - Humans suck at context switching.
+  - Later Example: PRs
 - Less mouse is better.
 - Less seams in a workflow.
 
@@ -70,9 +72,15 @@ TEMP
 <!-- JA -->
 ## Shell is a language
 
+It's not just the thing you use in your terminal!
+
 Your shell `(zsh/bash/sh)` is a programming language -- not a means to
 navigation. It can work for you just as well as python, in some cases
 better.
+
+```
+DEMO -->
+```
 
 <!-- ## Shell is a language -->
 
@@ -87,10 +95,15 @@ better.
 
 <!-- JA -->
 ## Really Nice
+#### Think less, program more!
 
 - `tmux`
 - `nvim`/`vim`
 - `fzf`
+
+```
+DEMO -> 
+```
 
 <!-- ## Really Nice -->
 
@@ -191,7 +204,7 @@ docker ps | grep communicator | grep 1_1 | awk '{print $1}' | xargs docker logs
 <!-- # Conclusion -->
 
 ## VEMO
-TEMP
+#### It's a vim demo
 <!-- ## VEMO -->
 
 ## Where to start?
