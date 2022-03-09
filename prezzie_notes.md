@@ -1,4 +1,3 @@
-<!-- JA -->
 # Title
 
 #### By:
@@ -27,12 +26,14 @@
 
 <!-- AJ -->
 ### Your terminal is your friend.
+#### You should get to know your friend.
 
 <!-- JA -->
 ### How you flow through your work.
 
 <!-- AJ -->
 ### Small Composable Tools
+####  A fundamental perk to working from the terminal.
 
 <!-- JA -->
 ### Shell is a language
@@ -124,10 +125,69 @@ TEMP
 
 <!-- AJ -->
 ## Austin Examples
-- for loop + md5 situ
-- awk for command frequency
-- awk for scaling time test
-- sed for changing repo name
+
+## sed for changing repo name
+
+```sh
+sed '/hotwallet-${short_name}/ s/main/<Current Working Branch>/' Cargo.toml
+```
+
+## awk for command frequency
+
+```sh
+$ cat ~/.zsh_history | \
+  sed "s/:[ ]*[0-9]*:0;[* ]*//" | \
+  tr "|" "\n" | \
+  sed 's/^ //' | \
+  awk '{ dict[$1]++; }
+       END \
+       { for (key in dict) print dict[key] ": " key }' | \
+  sort -nr | \
+  head
+```
+```
+307: ls
+153: vim
+133: cargo
+129: cd
+108: sed
+103: gst
+69: cat
+64: awk
+58: git
+56: echo
+```
+
+## awk for scaling time test
+
+```sh
+$ cat mutex_test.txt | \
+  sed "s/s$//" | \
+  awk ' { sum += $6; count += 1 } END { print 'mutex' sum / count} '
+$ cat url_test.txt | \
+  sed "s/s$//" | \
+  awk ' { sum += $6; count += 1 } END { print 'url' sum / count} '
+```
+```
+mutex 23.1128
+url 22.369
+```
+
+## Quickly compare files with a friend
+
+- for loop + md5
+
+```sh
+$ for f in */Cargo.toml; do \
+  md5 -r $f; \
+done;
+```
+```
+8499ff4505a176f78212079f7effb674 common/Cargo.toml
+253327530cbfbc0d6bdf8c38669cc075 communicator/Cargo.toml
+2db895d65e5dc764a979d64c348b2c09 manager/Cargo.toml
+aa16baf0012fa188e1a88b8225591131 worker-grpc/Cargo.toml
+```
 
 <!-- ## Austin Examples -->
 
