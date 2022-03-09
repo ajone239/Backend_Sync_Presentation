@@ -1,4 +1,4 @@
-# Title
+# The Terminal is your friend.
 
 #### By:
 #### Jesse Akozbek and Austin Jones
@@ -44,7 +44,7 @@
 <!-- # Concepts -->
 
 <!-- AJ -->
-## Your terminal is your friend.
+# Your terminal is your friend.
 
 - You should get to know your friend.
   The terminal is a main line to your computer -- an effective tool.
@@ -55,7 +55,7 @@
 <!-- ## Your terminal is your friend. -->
 
 <!-- JA -->
-## How you flow through your work.
+# How you flow through your work.
 
 - Don't spend a lot of time doing something that your computer can do better
 - Homogeneous workflows increase productivity.
@@ -67,12 +67,16 @@
 <!-- ## How you flow through your work. -->
 
 <!-- AJ -->
-## Small Composable Tools
-TEMP
+# Small Composable Tools
+
+- The Unix philosophy is built around small tool that can chain.
+- Monolithic solutions are locked into solving problem that were foreseen.
+- Smaller tools can build into surprisingly dynamic tools.
+
 <!-- ## Small Composable Tools -->
 
 <!-- JA -->
-## Shell is a language
+# Shell is a language
 
 It's not just the thing you use in your terminal!
 
@@ -86,17 +90,18 @@ DEMO -->
 
 <!-- ## Shell is a language -->
 
-# Tools (common/essential)
+# Tools
 
 ### Really Nice
 #### Tools that make the terminal feel like an extension of your brain.
 
 ### Essential
+#### The tools that you won't be able to not use.
 
 <!-- # Tools (common/essential) -->
 
 <!-- JA -->
-## Really Nice
+# Really Nice
 #### Think less, program more!
 
 - `tmux`
@@ -104,16 +109,16 @@ DEMO -->
 - `fzf`
 
 ```
-DEMO -> 
+DEMO ->
 ```
 
 <!-- ## Really Nice -->
 
 <!-- Handoff to Austin -->
 <!-- AJ -->
-## Essential
+# Essential
 
-### `builtin` (ls, cd, etc.)
+### Built In's (ls, cd, etc.)
 
 These come with your shell.
 
@@ -134,19 +139,37 @@ These come with your shell.
 <!-- ## Essential -->
 
 # Examples
-TEMP
+
+### Austin's Examples
+
+### Jesse's Examples
+
 <!-- # Examples -->
 
 <!-- AJ -->
-## Austin Examples
+# Austin's Examples
 
-## sed for changing repo name
+### sed for changing repo name
+#### Easy command for fixing dependencies in a file.
+
+### awk for command frequency
+#### Something I used while making this presentation.
+
+### awk for scaling time test
+#### How this workflow helped me do my job.
+
+### Quickly compare files with a friend
+#### A nifty solution to debugging build differences.
+
+<!-- # Austin Examples -->
+
+# sed for changing repo name
 
 ```sh
 sed '/hotwallet-${short_name}/ s/main/<Current Working Branch>/' Cargo.toml
 ```
 
-## awk for command frequency
+# awk for command frequency
 
 ```sh
 $ cat ~/.zsh_history | \
@@ -159,6 +182,8 @@ $ cat ~/.zsh_history | \
   sort -nr | \
   head
 ```
+
+Output:
 ```
 307: ls
 153: vim
@@ -172,7 +197,7 @@ $ cat ~/.zsh_history | \
 56: echo
 ```
 
-## awk for scaling time test
+# awk for scaling time test
 
 ```sh
 $ cat mutex_test.txt | \
@@ -182,12 +207,14 @@ $ cat url_test.txt | \
   sed "s/s$//" | \
   awk ' { sum += $6; count += 1 } END { print 'url' sum / count} '
 ```
+
+Output:
 ```
 mutex 23.1128
 url 22.369
 ```
 
-## Quickly compare files with a friend
+# Quickly compare files with a friend
 
 - for loop + md5
 
@@ -196,6 +223,8 @@ $ for f in */Cargo.toml; do \
   md5 -r $f; \
 done;
 ```
+
+Output:
 ```
 8499ff4505a176f78212079f7effb674 common/Cargo.toml
 253327530cbfbc0d6bdf8c38669cc075 communicator/Cargo.toml
@@ -205,7 +234,7 @@ aa16baf0012fa188e1a88b8225591131 worker-grpc/Cargo.toml
 
 <!-- Handoff -->
 <!-- JA -->
-## Jesse's Examples
+# Jesse's Examples
 #### Have an alias to edit and apply your aliases
 
 ```sh
@@ -217,7 +246,7 @@ alias edza="vim $ZDOTDIR/.zsh_aliases; exec zsh"
 ```sh
 git_push_account_for_tracking = function() {
     tracking=$(git status -sb | grep origin/)
-    
+
     if [[ $tracking = "" ]]; then
         git push -u origin $(git branch --show-current)
     else
@@ -228,7 +257,7 @@ git_push_account_for_tracking = function() {
 alias gp="git_push_account_for_tracking"
 ```
 
-## Jesse's Examples
+# Jesse's Examples
 
 #### Delete local branches that have been deleted upstream
 ```sh
@@ -264,11 +293,11 @@ docker ps | grep communicator | grep 1_1 | awk '{print $1}' | xargs docker logs
 
 <!-- # Conclusion -->
 
-## VEMO
+# VEMO
 #### It's a vim demo
 <!-- ## VEMO -->
 
-## Where to start?
+# Where to start?
 
 #### Learn VIM for the last time
 #### The Primeagen (Note: contains vulgar language)
