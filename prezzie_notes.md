@@ -1,73 +1,75 @@
+<!-- JA -->
 # Title
 
-Our names probably.
+#### By:
+#### Jesse Akozbek and Austin Jones
 
 # Overview
 
-## Concepts
+### Concepts
 
-Concepts that we think are intrinsic to working with the terminal.
+#### Concepts that we think are intrinsic to working with the terminal.
 
-## Tools (common/essential)
+### Tools (common/essential)
 
-A run down of some of the tools that make ends meet.
+#### A run down of some of the tools that make ends meet.
 
-## Examples
+### Examples
 
-Examples of how a terminal workflow has made life easier.
+#### Examples of how a terminal workflow has made life easier.
 
-## Takeaways?
+<!-- ## Takeaways? -->
 
 # Concepts
 
+<!-- AJ -->
 ## Your terminal is your friend.
 
 - You should get to know your friend. The terminal is a main line to
   your computer -- an effective tool.
-- It\'s all there. The terminal is one box for most of your tools.
+- It's all there. The terminal is one box for most of your tools.
 - Your friend wants to help you. You have to know how to ask it for
   help.
 
+<!-- JA -->
 ## How you flow through your work.
 
-- I can\'t willingly do something my computer can do better.
+- I can't willingly do something my computer can do better.
 - Homogenous workflows increase productivity.
   - Ex PRs
   - Humans suck at context switching.
 - Less mouse is better.
 - Less seams in a workflow.
 
+<!-- AJ -->
 ## Unix philosophy / Small Composable Tools
 
+<!-- JA -->
 ## Shell is a language
 
-Your shell \`zsh\`/\`bash\` is a programming language -- not a means to
+Your shell `(zsh/bash/sh)` is a programming language -- not a means to
 navigation. It can work for you just as well as python, in some cases
 better.
 
 # Tools (common/essential)
 
-## Common
+### Really Nice
+#### Tools that make the terminal feel like an extension of your brain.
 
-This is a class of tools that aren\'t necessary, but are groovy.
-
-### gnu replacements
-
-- fd-find
-- ripgrep
-- exa
-
-## Practically Essential
+<!-- JA -->
+## Really Nice
 
 - tmux
 - nvim/vim
-- using aliases
+- fzf
 
+<!-- Handoff to Austin -->
+<!-- AJ -->
 ## Essential
 
 ### standard gnu utils
 
-- sed
+- sed (helper)
 - awk
 - vi
 - find
@@ -77,26 +79,54 @@ This is a class of tools that aren\'t necessary, but are groovy.
 
 These come with your shell.
 
-## Cute
+<!-- AJ -->
+## Other
+
+This is a class of tools that aren't necessary, but are groovy.
+
+### gnu replacements
+
+- fd-find
+- ripgrep
+- exa
+
+### Cute
 
 - neofetch
 - figlet
 - toilet
 - cowsay
 
+
 # Examples
 
-## EX1
+<!-- AJ -->
+## Austin Examples
+- for loop + md5 situ
+- awk for command frequency
+- awk for scaling time test
+- sed for changing repo name
 
+## EX 1
+
+<!-- Handoff -->
+<!-- JA -->
 ### Jesse Example Ideas
-- Have an alias to edit and apply your aliases
+#### Have an alias to edit and apply your aliases
+
+```sh
+alias edza="vim $ZDOTDIR/.zsh_aliases; exec zsh"
+```
+
 - Git push, but account for possibility that an upstream tracked branch doesn't exist yet
+- awk Docker find name of running container using awk
 - Delete local branches that have been deleted upstream
 - Github create PR + JIRA CLI
-- Docker find name of running container using awk
 
 # Conclusion
 
-## How you can be like ME! (which is to say DOPE)
+## VEMO
+
+## Where to start?
 
 If you run into a problem fix it programmatically.
