@@ -61,6 +61,7 @@ This is a class of tools that aren\'t necessary, but are groovy.
 
 - tmux
 - nvim/vim
+- using aliases
 
 ## Essential
 
@@ -86,6 +87,13 @@ These come with your shell.
 # Examples
 
 ## EX1
+
+### Jesse Example Ideas
+- Have an alias to edit and apply your aliases
+- Git push, but account for possibility that an upstream tracked branch doesn't exist yet
+- Delete local branches that have been deleted upstream
+- Github create PR + JIRA CLI
+- Docker find name of running container using awk
 
 # Conclusion
 
