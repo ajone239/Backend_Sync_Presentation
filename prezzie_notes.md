@@ -1,4 +1,3 @@
-<!-- JA -->
 # Title
 
 #### By:
@@ -10,7 +9,7 @@
 
 #### Concepts that we think are intrinsic to working with the terminal.
 
-### Tools (common/essential)
+### Tools
 
 #### A run down of some of the tools that make ends meet.
 
@@ -107,26 +106,63 @@ This is a class of tools that aren't necessary, but are groovy.
 - awk for scaling time test
 - sed for changing repo name
 
-## EX 1
-
 <!-- Handoff -->
 <!-- JA -->
-### Jesse Example Ideas
+## Jesse's Examples
 #### Have an alias to edit and apply your aliases
 
 ```sh
 alias edza="vim $ZDOTDIR/.zsh_aliases; exec zsh"
 ```
 
-- Git push, but account for possibility that an upstream tracked branch doesn't exist yet
-- awk Docker find name of running container using awk
-- Delete local branches that have been deleted upstream
-- Github create PR + JIRA CLI
+#### Git push, account for upstream branch missing
+
+```sh
+git_push_account_for_tracking = function() {
+    tracking=$(git status -sb | grep origin/)
+    
+    if [[ $tracking = "" ]]; then
+        git push -u origin $(git branch --show-current)
+    else
+        git push
+    fi
+}
+
+alias gp="git_push_account_for_tracking"
+```
+
+## Jesse's Examples
+
+#### Delete local branches that have been deleted upstream
+```sh
+alias gbr="git branch --v | awk '/\[gone\]/ {print \$1}' | xargs git branch -D"
+```
+
+#### Github create PR + JIRA CLI
+```sh
+get_jira_issue_summary = function() {
+    jira issue list --plain --columns key,summary > temp_jira_issues;
+
+    echo $(cat temp_jira_issues | rg $(git branch --show-current) | cut -f2)
+
+    rm temp_jira_issues
+}
+
+alias ghpr='gh pr create --base main --reviewer $DEFAULT_REVIEWER --title "$(git branch --show-current): $(get_jira_issue_summary)" --body '
+```
+
+#### Docker find container id of running container using awk
+```sh
+docker ps | grep communicator | grep 1_1 | awk '{print $1}' | xargs docker logs
+```
 
 # Conclusion
 
 ## VEMO
 
 ## Where to start?
+
+#### Learn VIM for the last time
+#### The Primeagen (Note: contains vulgar language)
 
 If you run into a problem fix it programmatically.
