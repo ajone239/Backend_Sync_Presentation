@@ -288,8 +288,10 @@ docker ps | grep communicator | grep 1_1 | awk '{print $1}' | xargs docker logs
 # Conclusion
 
 ### VEMO
+#### A vim demo!
 
 ### Where to start?
+#### The trailhead for your vim journey.
 
 <!-- # Conclusion -->
 
@@ -299,8 +301,11 @@ docker ps | grep communicator | grep 1_1 | awk '{print $1}' | xargs docker logs
 
 # Where to start?
 
-#### Learn VIM for the last time
-#### The Primeagen (Note: contains vulgar language)
+### Resources
+- Learn VIM for the last time
+- The Primeagen (Note: contains vulgar language)
 
-If you run into a problem fix it programmatically.
+### Tips
+- If you run into a problem fix it programmatically.
+- Treat the shell the same as programming.
 <!-- ## Where to start? -->
